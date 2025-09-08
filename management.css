@@ -1,0 +1,102 @@
+body {
+  min-height: 100vh; 
+  background: linear-gradient(130deg, #e9f1ff, #ffffff);
+  padding-top: 70px;
+}
+ 
+/* Navigation Bar Styling*/
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1030;
+}
+    
+.navbar-brand img {
+  height: 40px;
+}
+    
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+    
+.nav-link:hover {
+  color: rgb(124,132,172) !important;
+}
+    
+.custom-navbar {
+  background-color: rgb(6,14,70);
+}
+    
+.navbar-toggler:focus{
+  box-shadow: none !important;
+  outline: none !important;
+}
+    
+.navbar-toggler {
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  z-index: 1050;
+  position: relative;
+}
+    
+.navbar-toggler i {
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+    
+.icon-animate {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+/* Footer */
+.footer-custom 
+{
+    background: linear-gradient(to right, rgb(0,15,72),rgb(0,15,72)); 
+    color: #fff;
+}
+
+.footer-custom a 
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-custom a:hover 
+{
+    text-decoration: underline;
+}
+
+/*Management*/
+.profile-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    transition: transform 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.position {
+    color: #6c757d;
+    font-size: 0.95rem;
+}

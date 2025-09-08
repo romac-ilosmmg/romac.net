@@ -1,0 +1,327 @@
+body {
+  min-height: 100vh; 
+  background: linear-gradient(130deg, #e9f1ff, #ffffff);
+  padding-top: 70px;
+}
+
+  html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Navigation Bar Styling*/
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1030;
+}
+    
+.navbar-brand img {
+  height: 40px;
+}
+    
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+    
+.nav-link:hover {
+  color: rgb(124,132,172) !important;
+}
+    
+.custom-navbar {
+  background-color: rgb(6,14,70);
+}
+    
+.navbar-toggler:focus{
+  box-shadow: none !important;
+  outline: none !important;
+}
+    
+.navbar-toggler {
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  z-index: 1050;
+  position: relative;
+}
+    
+.navbar-toggler i {
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+    
+.icon-animate {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+/* Footer */
+.footer-custom 
+{
+    background: linear-gradient(to right, rgb(0,15,72),rgb(0,15,72)); 
+    color: #fff;
+}
+
+.footer-custom a 
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-custom a:hover 
+{
+    text-decoration: underline;
+}
+
+
+
+.hero-section {
+  background: url('Assets/About\ Us\ 2.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* optional, para parallax feel */
+  min-height: 60vh; /* laki ng hero, adjust mo kung gusto mo mas mataas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* overlay para mas makita text */
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 40vh;   /* hindi masyadong malaki, sakto lang */
+    background-position: top center;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+
+.overview-section {
+  padding: 60px 0;
+}
+
+.overview-section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.overview-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.overview-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* optional */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .overview-section {
+    text-align: center;
+  }
+  .overview-section h2 {
+    font-size: 1.8rem;
+  }
+  .overview-section p {
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+}
+
+
+/* Vision Section */
+.vision-section {
+  padding: 50px 20px;
+  background-color: rgb(6,14,70); /* optional background */
+}
+
+.vision-section h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.vision-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify; /* clean justified text */
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .vision-section h2 {
+    font-size: 1.6rem;
+  }
+  .vision-section p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+
+.mission-section {
+  padding: 50px 20px;
+}
+
+.mission-section h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.mission-card {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.mission-card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.mission-card li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+/* Hover Animation */
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .mission-section h2 {
+    font-size: 1.6rem;
+  }
+  .mission-card {
+    padding: 20px;
+  }
+  .mission-card h3 {
+    font-size: 1rem;
+  }
+  .mission-card li {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+.ceo-message {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.ceo-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.ceo-image {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.ceo-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.ceo-text {
+  flex: 2;
+}
+
+.ceo-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.ceo-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.ceo-text .ceo-name {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-style: italic;
+  color: #444;
+}
+
+/* Responsive - mobile layout */
+@media (max-width: 768px) {
+  .ceo-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ceo-text h2 {
+    text-align: center;
+  }
+
+  .ceo-text p {
+    text-align: justify;
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+body {
+  min-height: 100vh; 
+  background: linear-gradient(130deg, #e9f1ff, #ffffff);
+  padding-top: 70px;
+}
+
+  html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Navigation Bar Styling*/
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1030;
+}
+    
+.navbar-brand img {
+  height: 40px;
+}
+    
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+    
+.nav-link:hover {
+  color: rgb(124,132,172) !important;
+}
+    
+.custom-navbar {
+  background-color: rgb(6,14,70);
+}
+    
+.navbar-toggler:focus{
+  box-shadow: none !important;
+  outline: none !important;
+}
+    
+.navbar-toggler {
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  z-index: 1050;
+  position: relative;
+}
+    
+.navbar-toggler i {
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+    
+.icon-animate {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+/* Footer */
+.footer-custom 
+{
+    background: linear-gradient(to right, rgb(0,15,72),rgb(0,15,72)); 
+    color: #fff;
+}
+
+.footer-custom a 
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-custom a:hover 
+{
+    text-decoration: underline;
+}
+
+
+
+.hero-section {
+  background: url('Assets/Job\ Vacancies\ Hero.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* optional, para parallax feel */
+  min-height: 60vh; /* laki ng hero, adjust mo kung gusto mo mas mataas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* overlay para mas makita text */
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 40vh;   /* hindi masyadong malaki, sakto lang */
+    background-position: top center;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+/* Job Vacancies Section */
+.job-vacancies h2 {
+  color: #061046;
+}
+
+.job-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.job-card h5 {
+  color: #061046;
+}
+
+.job-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.job-card .btn {
+  border-radius: 0;
+}
+
+.custom-button{
+    background-color: #061046;
+    color: white;
+}
+
+.custom-button:hover{
+    background-color: #061046;
+    color: white;
+}
+
+@media (max-width: 767.98px) {
+  .job-card {
+    border: 1px solid #eee;
+    border-radius: 0;
+    background: #fff;
+  }
+
+  .job-vacancies .overflow-auto::-webkit-scrollbar {
+    display: none; /* hide scrollbar */
+  }
+}
+
+  /* Fade + scale + slide-up animation for modal */
+.modal.jobModalCustom .modal-dialog {
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.35s ease-in-out;
+  }
+  .modal.jobModalCustom.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+
+
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

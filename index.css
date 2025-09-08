@@ -1,0 +1,242 @@
+body {
+  min-height: 100vh; 
+  background: linear-gradient(130deg, #e9f1ff, #ffffff);
+  padding-top: 70px;
+}
+ 
+/* Navigation Bar Styling*/
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1030;
+}
+    
+.navbar-brand img {
+  height: 40px;
+}
+    
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+    
+.nav-link:hover {
+  color: rgb(124,132,172) !important;
+}
+    
+.custom-navbar {
+  background-color: rgb(6,14,70);
+}
+    
+.navbar-toggler:focus{
+  box-shadow: none !important;
+  outline: none !important;
+}
+    
+.navbar-toggler {
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  z-index: 1050;
+  position: relative;
+}
+    
+.navbar-toggler i {
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+    
+.icon-animate {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+/* Hero Styling*/
+.hero-section {
+  padding: 0;           
+  padding-top: 5px;       
+}
+
+.hero-section .row {
+  min-height: 50vh;     
+  display: flex;
+  align-items: center;
+}   
+
+.hero-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(6,14,70);
+}
+
+.hero-title span {
+  color: #df3d43;
+}
+
+.hero-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.btn-custom {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 0 !important;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-manpower {
+  background-color: rgb(6,14,70);
+  color: white;
+}
+
+.btn-manpower:hover {
+  background-color: rgb(6,14,70);
+  color: white;
+}
+
+.btn-job {
+  background-color: #df3d43;
+  color: white;
+}
+
+.btn-job:hover {
+  background-color: #df3d43;
+  color: white;
+}
+
+.hero-img {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+.hero-img img {
+width: 120%;           
+  height: auto;
+  object-fit: cover;     
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 80px !important; 
+    text-align: center;           
+  }
+
+  .hero-img {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    margin: 0 auto;          
+  }
+
+  .hero-img img {
+    width: 130% !important;       
+    max-width: 420px !important;  
+    height: auto !important;
+    display: block;               
+    margin: 0 auto;              
+  }
+
+  .btn-custom {
+    width: 100% !important;   
+    max-width: 320px;        
+    margin: 8px auto;         
+    display: block;      
+  }
+}
+
+
+/* Achievement Section Styling*/
+.achievements-section .card {
+  border: none;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.achievements-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.custom-text
+  {
+  color:rgb(6,14,70);
+  }
+
+/*Career Quick Links*/
+.careers-section .card {
+  border-radius: 0 !important;
+  background: #fff; 
+  padding: 20px;
+  border: none; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.careers-section .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.custom-btn{
+  background-color: rgb(6,14,70);
+  color: white;
+  border-radius: 0 !important;
+}
+
+.custom-btn:hover{
+  background-color: rgb(6,14,70);
+  color: white;
+}
+
+/*News Section Styling*/
+.card img {
+    object-fit: cover;
+    height: 250px;
+}
+
+.custom-button
+{
+    background-color: rgb(0,15,72);
+    color: white;
+    border-radius: 0 !important;
+}
+
+.custom-button:hover
+{
+    background-color: rgb(0,15,72);
+    color: white;
+}
+
+/* Footer */
+.footer-custom 
+{
+    background: linear-gradient(to right, rgb(0,15,72),rgb(0,15,72)); 
+    color: #fff;
+}
+
+.footer-custom a 
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-custom a:hover 
+{
+    text-decoration: underline;
+}
+
+/*FAQ*/
+.accordion-button:not(.collapsed){
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.accordion-button:focus{
+  box-shadow: none !important;
+}

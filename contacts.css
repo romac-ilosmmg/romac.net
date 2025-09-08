@@ -1,0 +1,320 @@
+body {
+  min-height: 100vh; 
+  background: linear-gradient(130deg, #e9f1ff, #ffffff);
+  padding-top: 70px;
+}
+ 
+/* Navigation Bar Styling*/
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1030;
+}
+    
+.navbar-brand img {
+  height: 40px;
+}
+    
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+    
+.nav-link:hover {
+  color: rgb(124,132,172) !important;
+}
+    
+.custom-navbar {
+  background-color: rgb(6,14,70);
+}
+    
+.navbar-toggler:focus{
+  box-shadow: none !important;
+  outline: none !important;
+}
+    
+.navbar-toggler {
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  z-index: 1050;
+  position: relative;
+}
+    
+.navbar-toggler i {
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+    
+.icon-animate {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+
+
+/* Footer */
+.footer-custom 
+{
+    background: linear-gradient(to right, rgb(0,15,72),rgb(0,15,72)); 
+    color: #fff;
+}
+
+.footer-custom a 
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-custom a:hover 
+{
+    text-decoration: underline;
+}
+
+
+
+.hero-section {
+  background: url('Assets/Contact\ Cover.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; 
+  min-height: 60vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* overlay para mas makita text */
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 40vh;   /* hindi masyadong malaki, sakto lang */
+    background-position: top center;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+/*Contact Us*/
+
+.contact-section h3, 
+.contact-section h4 {
+  color: #061046;
+}
+
+.contact-section p {
+  font-size: 0.95rem;
+}
+
+.contact-section .card {
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.contact-section .card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-icon{
+    color: rgb(6,14,70);
+}
+
+/* Contact Card */
+.contact-card {
+  background: #ffffff;
+  border-radius: 0;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Headline */
+.contact-card h3 {
+  font-weight: 700;
+  color: #061046;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Inputs & Select */
+.modern-form .form-control,
+.modern-form .form-select {
+  border-radius: 0;
+  border: 1px solid #e0e0e0;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+.modern-form .form-control:focus,
+.modern-form .form-select:focus {
+  background: #fff;
+  border-color: #061046;
+  box-shadow: 0 0 10px rgba(6,14,70,0.2);
+  outline: none;
+}
+
+/* Labels */
+.modern-form .form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* Button */
+.btn-modern {
+  background: linear-gradient(135deg, #061046, #0a1a80);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0;
+  padding: 12px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.btn-modern:hover {
+  background: linear-gradient(135deg, #0a1a80, #061046);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(6,14,70,0.3);
+  color: white;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  display: block; /* wag flex, para hindi magulo sa mobile */
+}
+
+.select-wrapper select.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fafafa;
+  border: 1px solid #061046;
+  padding: 12px 40px 12px 16px; /* space sa kanan for icon */
+  font-size: 0.95rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0;
+  line-height: 1.5;
+  background-image: none !important;
+}
+
+.select-wrapper i {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%); /* center icon kahit anong height */
+  color: #061046;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+/* 📱 Mobile Fix para sa Contact Us */
+@media (max-width: 767px) {
+  /* Center ang mga title at text */
+  .contact-section h3,
+  .contact-section h5,
+  .contact-section p {
+    text-align: center;
+  }
+
+  .contact-section p{
+    text-align: left;
+  }
+
+  /* Icons at text pantay sa gitna */
+  .contact-section p i {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    min-width: 18px;
+  }
+
+  /* Google Map responsive */
+  .map-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    margin-top: 1.5rem;
+  }
+  .map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Contact card spacing sa baba para di dikit */
+  .contact-card {
+    margin-top: 2rem;
+  }
+}
+
+
+
+
+/* Base modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Show modal when targeted */
+.modal:target {
+  display: block;
+}
+
+/* Modal content */
+.modal-content {
+  background: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+

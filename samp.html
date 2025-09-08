@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Profiling Form with Modal + PDF</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+
+    body {
+      background-color: #f9fafb;
+    }
+
+    
+    .form-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(83, 60, 60, 0.05);
+    }
+    .form-section h5 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .modal-body p {
+      margin-bottom: .5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="mb-4 text-center">Company Profiling Form</h2>
+    <form id="profilingForm">
+      <!-- Company Profiling -->
+      <div class="form-section">
+        <h5>Company Profiling</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Registered Company Name</label>
+            <input type="text" class="form-control" id="companyName" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Authorized Signatory</label>
+            <input type="text" class="form-control" id="signatory">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Contact Person</label>
+            <input type="text" class="form-control" id="contactPerson">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Nature of Business</label>
+            <input type="text" class="form-control" id="natureBusiness">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Positions Needed</label>
+            <input type="text" class="form-control" id="positions">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Company Address</label>
+            <input type="text" class="form-control" id="address">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Designation</label>
+            <input type="text" class="form-control" id="designation">
+          </div>
+          <!-- Contact Number -->
+<div class="col-md-6">
+  <label class="form-label">Contact Number</label>
+  <div class="input-group">
+    <span class="input-group-text">+63</span>
+    <input type="tel" class="form-control" id="contactNumber" placeholder="9123456789">
+  </div>
+</div>
+          <div class="col-md-6">
+            <label class="form-label">Number of Working Days per week</label>
+            <input type="number" class="form-control" id="workingDays">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Number of Personnel</label>
+            <input type="number" class="form-control" id="personnel">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pre-Engagement Company Profiling -->
+      <div class="form-section">
+        <h5>Pre-Engagement Company Profiling</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Target Date</label>
+            <input type="date" class="form-control" id="targetDate">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Gender Preferences</label>
+            <select class="form-select" id="gender">
+              <option selected disabled>Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>No Preference</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Contract Duration</label>
+            <input type="text" class="form-control" id="contractDuration" placeholder="e.g. 6 months, 1 year">
+          </div>
+        </div>
+      </div>
+
+      <!-- Review Summary -->
+      <div class="form-section">
+        <h5>Review Summary</h5>
+        <textarea class="form-control" rows="4" id="summary" placeholder="Optional notes or summary..."></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary px-4">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Review Your Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="modalContent">
+          <!-- Filled dynamically with JS -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Edit</button>
+          <button type="button" class="btn btn-outline-primary" id="downloadPDF">Download PDF</button>
+          <button type="button" class="btn btn-success" id="finalSubmit">Confirm Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const form = document.getElementById('profilingForm');
+    const modalContent = document.getElementById('modalContent');
+    const previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
+    const finalSubmit = document.getElementById('finalSubmit');
+    const downloadPDF = document.getElementById('downloadPDF');
+
+    let formData = {};
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      // Collect form data
+      formData = {
+        'Registered Company Name': document.getElementById('companyName').value,
+        'Authorized Signatory': document.getElementById('signatory').value,
+        'Contact Person': document.getElementById('contactPerson').value,
+        'Nature of Business': document.getElementById('natureBusiness').value,
+        'Positions Needed': document.getElementById('positions').value,
+        'Company Address': document.getElementById('address').value,
+        'Designation': document.getElementById('designation').value,
+        'Contact Number': document.getElementById('contactNumber').value,
+        'Working Days': document.getElementById('workingDays').value,
+        'Number of Personnel': document.getElementById('personnel').value,
+        'Email': document.getElementById('email').value,
+        'Target Date': document.getElementById('targetDate').value,
+        'Gender Preference': document.getElementById('gender').value,
+        'Contract Duration': document.getElementById('contractDuration').value,
+        'Summary': document.getElementById('summary').value
+      };
+
+      // Build preview
+      modalContent.innerHTML = '';
+      for (const [key, value] of Object.entries(formData)) {
+        modalContent.innerHTML += `<p><strong>${key}:</strong> ${value || '<em>Not provided</em>'}</p>`;
+      }
+
+      // Show modal
+      previewModal.show();
+    });
+
+    finalSubmit.addEventListener('click', function(){
+      previewModal.hide();
+      alert('Submitted successfully!');
+      form.reset();
+    });
+
+    downloadPDF.addEventListener('click', function(){
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      let y = 20;
+
+      doc.setFontSize(16);
+      doc.text("Company Profiling Summary", 20, y);
+      y += 10;
+
+      doc.setFontSize(12);
+      for (const [key, value] of Object.entries(formData)) {
+        if (y > 270) { // create new page if needed
+          doc.addPage();
+          y = 20;
+        }
+        doc.text(`${key}: ${value || 'Not provided'}`, 20, y);
+        y += 8;
+      }
+
+      doc.save("profiling-summary.pdf");
+    });
+  </script>
+</body>
+</html>

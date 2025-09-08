@@ -1,0 +1,170 @@
+body {
+  min-height: 100vh; 
+  background: linear-gradient(130deg, #e9f1ff, #ffffff);
+  padding-top: 70px;
+}
+
+  html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Navigation Bar Styling*/
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1030;
+}
+    
+.navbar-brand img {
+  height: 40px;
+}
+    
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+    
+.nav-link:hover {
+  color: rgb(124,132,172) !important;
+}
+    
+.custom-navbar {
+  background-color: rgb(6,14,70);
+}
+    
+.navbar-toggler:focus{
+  box-shadow: none !important;
+  outline: none !important;
+}
+    
+.navbar-toggler {
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+  z-index: 1050;
+  position: relative;
+}
+    
+.navbar-toggler i {
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+    
+.icon-animate {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+/* Footer */
+.footer-custom 
+{
+    background: linear-gradient(to right, rgb(0,15,72),rgb(0,15,72)); 
+    color: #fff;
+}
+
+.footer-custom a 
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-custom a:hover 
+{
+    text-decoration: underline;
+}
+
+
+
+.hero-section {
+  background: url('Assets/manpower\ cover.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* optional, para parallax feel */
+  min-height: 60vh; /* laki ng hero, adjust mo kung gusto mo mas mataas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* overlay para mas makita text */
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 40vh;   /* hindi masyadong malaki, sakto lang */
+    background-position: top center;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+
+/*Form*/
+ .form-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .form-section h5 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .modal-body p {
+      margin-bottom: .5rem;
+    }
+
+    .custom-button
+    {
+        background-color: rgb(6,14,70);
+        color: white;
+        border-radius: 0;
+    }
+
+    .custom-button:hover{
+        color: white;
+        background-color: rgb(6,14,70);
+    }
+
+    .form-control
+    {
+        border-radius: 0;
+    }
+
+    .form-control:focus {
+  border-color: rgb(0,15,72);
+  box-shadow: 0 0 5px rgba(0, 15, 72, 0.5);
+  outline: none;
+}
+
+
+
+
+
+
+
+
+
+
